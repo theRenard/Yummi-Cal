@@ -1,32 +1,41 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<title>jQuery Datepicker</title>
-<style type="text/css">
-@import "jquery.datepick.css";
-</style>
-<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="jquery.datepick.js"></script>
-<script type="text/javascript">
-$(function() {
-	$('#popupDatepicker').datepick();
-	$('#inlineDatepicker').datepick({
-		onSelect: showDate,
-		// pickerClass: 'my-picker',
-		onShow: function() { 
-			console.log($(this));
-        	$('body').find('.datepick').removeAttr('style'); 
-        	} 
-	});
-});
 
-function showDate(date) {
-	alert('The date chosen is ' + date);
-}
-</script>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Yummi-cal theme for jQuery datepicker</title>
+
+	<style type="text/css">
+		@import "jquery.datepick.css";
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.datepick.js"></script>
+	
+	<script type="text/javascript">
+	$(function() {
+		$('#popupDatepicker').datepick();
+		$('#inlineDatepicker').datepick({
+			onSelect: showDate,
+			// pickerClass: 'my-picker',
+			onShow: function() { 
+				console.log($(this));
+	        	$('.datepick').removeAttr('style'); 
+	        	} 
+		});
+	});
+	
+	function showDate(date) {
+		alert('The date chosen is ' + date);
+	}
+	</script>	
+	
 </head>
 <body>
+
 <h1>jQuery Datepicker</h1>
 <p>This page demonstrates the very basics of the
 	<a href="http://keith-wood.name/datepick.html">jQuery Datepicker plugin</a>.
@@ -36,5 +45,9 @@ function showDate(date) {
 <p>A popup datepicker <input type="text" id="popupDatepicker"></p>
 <p>Or inline</p>
 <div id="inlineDatepicker"></div>
+
+
+
 </body>
 </html>
+
