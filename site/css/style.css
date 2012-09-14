@@ -16,9 +16,9 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #637e93; }
+a:visited { color: #637e93; }
+a:hover { color: #637e93; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -26,7 +26,9 @@ abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
 dfn { font-style: italic; }
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; padding: 0;
+	margin: 0.5em 0;
+}
 ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
@@ -40,6 +42,11 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+
+ul
+ {
+	list-style-type: square;
+}
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -207,27 +214,185 @@ img {
 
 /* @end */
 
-@media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+/* @group prism */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
 }
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;	
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0,0%,100%,.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+
+
+/* @end */
 
 html {
 	font-family: 'Source Sans Pro', sans-serif;
 	background-image: url(../img/noise_lines.png);
 }
 
-h1 {  }
+body {
+	margin-top: 5em;
+}
+
+.radial {
+background-color: #7896b2;
+background-image: -webkit-gradient(radial, 50% 100%,100,50% -50%,100, from(rgb(90, 113, 136)), to(rgb(120, 150, 178)));
+background-image: -webkit-radial-gradient(50% 0%, rgb(120, 150, 178), rgb(90, 113, 136));
+background-image: -moz-radial-gradient(50% 0%, rgb(120, 150, 178), rgb(90, 113, 136));
+background-image: -o-radial-gradient(50% 0%, rgb(120, 150, 178), rgb(90, 113, 136));
+background-image: -ms-radial-gradient(50% 0%, rgb(120, 150, 178), rgb(90, 113, 136));
+background-image: radial-gradient(50% 0%, rgb(120, 150, 178), rgb(90, 113, 136));	
+}
+
+h1 {
+	font-size: 80px;
+	text-shadow: #d5d5d5 -1px -1px 2px;
+	margin-bottom: 0;
+	color: #637e93;
+	margin-top: 0;
+	line-height: 0.8em;
+}
+
+h1
+{
+	text-shadow:
+	1px 1px 0 #CCC,
+	2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
+	3px 3px 0 #444,
+	4px 4px 0 #444,
+	5px 5px 0 #444,
+	6px 6px 0 #444; /* end of 4 level deep dark shadow */
+}
+h1#title:before, h1#title:after {
+	content: "★";
+	font-size: 15px;
+	
+}
+
+h1#title:before {
+	position: relative;
+	top: -16px;
+	right: 10px;
+}
+
+h1#title:after {
+	position: relative;
+	top: -16px;
+	left: 10px;
+}
+
+h4#payoff {
+	font-size: 16px;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #637e93;
+	text-shadow:
+	1px 1px 0 #CCC;
+	letter-spacing: 1px;
+	padding-left: 1em;
+}
+
+p {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
 
 @media only screen and (max-width: 1023px) {
 
@@ -282,18 +447,51 @@ h1 {  }
 
 }
 
-div.absolute_container {
-	position: relative;
+#absolute_container {
+	position: absolute;
 }
 
 #resizable_calendar {
 	background-color: rgba(213,213,213,0.29);
-	width: 300px;
-	height: 300px;
-	padding: 2%;
+	padding: 5%;
 	border: 1px solid rgba(0,0,0,0.07);
 	position: absolute;
 	z-index: 2;
 	top: 0;
 	left: 0;
+	width: 90%;
+	border-radius: 4px;
+	
+}
+
+pre {
+	font-size: 14px;
+	line-height: 20px;
+	border-radius: 5px;
+}
+
+#datepicker_position {
+	width: 100%;
+	height: 400px;
+}
+
+.datepick {
+	
+  -webkit-transition: all 0.3s ease-out; 
+     -moz-transition: all 0.3s ease-out; 
+       -o-transition: all 0.3s ease-out; 
+          transition: all 0.3s ease-out; 
+}
+
+.datepick-popup {
+	width: 300px;
+}
+
+input {
+	margin: 30px;
+}
+
+div.datepick.datepick-multi {
+	width: 100px;
+}
 }
