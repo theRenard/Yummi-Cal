@@ -70,10 +70,10 @@
   -moz-border-radius: @radius;
 }
 
-.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 5px, @alpha: 0.3) {
-  -webkit-box-shadow: @arguments;
-  -moz-box-shadow: @arguments;
-  box-shadow: @arguments;
+.drop-shadow (@x-axis: 0, @y-axis: 1px, @blur: 5px, @alpha: 0.3) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
 //************************************************//
@@ -87,7 +87,7 @@
 	background-color: @datepickBackgroundColor;
 	color: @datepickColor;	
 	.rounded-corners;
-	.drop-shadow;
+//	.drop-shadow;
 	.font;
 
 }
@@ -365,6 +365,8 @@ button.datepick-cmd {
 		background-color: @datepickMonthHeaderBackgroundColor;
 		color: @datepickMonthHeaderColor;
 		font-weight: bold;
+		font-size: 1em;
+		padding: 2px 0 2px;
 
 
 	}
