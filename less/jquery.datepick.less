@@ -13,20 +13,20 @@
 @datepickWidth: 100%;
 @datepickHeight: 100%;
 
-// 								    //
+//**********************************//
 // here some "general" styles prefs //
-// 								    //
+//**********************************//
 
 // here you can set background color, font color and some other stuff
 
 @datepickBackgroundColor: #fff;
 @datepickColor: #000;
 
-// these are the gradients that you see on the top-natigation and in the cell when selected
+// these are the gradients you see on the top-natigation and in the cell when selected
+// you can choose a start color and an end color.
 
 @datepickGradienStartColor: rgb(90, 113, 136);
 @datepickGradienEndColor: rgb(120, 150, 178);
-
 
 // some other small details
 
@@ -34,11 +34,10 @@
 @datepickBackgroundColorDarker: darken(@datepickBackgroundColor, 10%);
 @datepickLineColor: darken(@datepickBackgroundColor, 15%);
 
-
 // font styling
 
 .font(@weight: 300, @size: 65%, @height: 2em) {
-	font: @weight @size e('/') @height "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif, FreeSans, sans-serif;
+	font: @weight @size e('/') @height "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 // rounded corners (still working on it, maybe v1.1), box-shadows and gradients
@@ -77,7 +76,9 @@
   box-shadow: @arguments;
 }
 
-// END OF VARIABLES
+//************************************************//
+// DON'T MESS WITH US (unless you really want to) //
+//************************************************//
 
 .datepick {
 
