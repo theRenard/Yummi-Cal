@@ -1,4 +1,7 @@
-/* @override file:///Volumes/Macintosh%20HD/Users/daniele/Sites/sandbox/Yummi-cal/site/css/style.css */
+/* @override 
+	file:///Volumes/Macintosh%20HD/Users/daniele/Sites/sandbox/Yummi-cal/site/css/style.css
+	http://yummical.com/css/style.css
+*/
 
 /* @group BP */
 
@@ -24,7 +27,7 @@ a { color: orange;
 a:visited { color: orange;
 	text-decoration: none;
 }
-a:hover { color: orange;
+a:hover { color: #d09000;
 	text-decoration: none;
 }
 a:focus { outline: thin dotted; }
@@ -390,16 +393,27 @@ header {
 }
 
 div#grabme {
-	background: url(../img/1.png) no-repeat 103% 0;
-	margin-left: 0;
-	margin-bottom: 10px;
-	margin-top: 10px;
 	text-align: right;
-	padding-right: 23px;
 }
 
-div#grabme {
--webkit-animation: bounce 1s infinite ;          
+#hand {
+	background: url(../img/1.png) no-repeat 0 0;
+	width: 20px;
+	height: 20px;
+	float: right;
+	position: relative;
+}
+
+p.info {
+	text-align: right;
+}
+
+span#logo {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	float: right;
+	background: url(/img/gb_logo.png) no-repeat 0 -4px;
 }
       
 
@@ -549,6 +563,39 @@ div.datepick.datepick-multi {
 
 #features li:nth-child(4) {
 	background-position: 0 -22px;
+	
 }
 
 /* @end */
+
+/* @group animation */
+
+@-webkit-keyframes up {
+  0%   { margin-top: 3px; }
+  50% { margin-top: -1px; }
+  100% { margin-top: 3px; }
+
+}
+@-moz-keyframes up {
+  0%   { margin-top: 3px; }
+  50% { margin-top: -1px; }
+  100% { margin-top: 3px; }
+}
+@-o-keyframes up {
+  0%   { margin-top: 3px; }
+  50% { margin-top: -1px; }
+  100% { margin-top: 3px; }
+}
+@keyframes up {
+  0%   { margin-top: 3px; }
+  50% { margin-top: -1px; }
+  100% { margin-top: 3px; }
+}
+
+/* @end */
+#hand  {
+  -webkit-animation: up 2s infinite ease-in-out; /* Safari 4+ */
+  -moz-animation:    up 2s infinite ease-in-out; /* Fx 5+ */
+  -o-animation:      up 2s infinite ease-in-out; /* Opera 12+ */
+  animation:         up 2s infinite ease-in-out; /* IE 10+ */
+}
