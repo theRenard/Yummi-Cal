@@ -10,7 +10,7 @@
 
 	function datePickerTextSize() {
 	
-		// this is used to set datepicker font size, it's based on his width.
+		// this is used to set datepicker font size, the fontRation is based on datepicker width.
 	
 		var fontRatio = 0.032;
 		
@@ -117,22 +117,10 @@
 	
 		});
 
-		$('#defaultPopup').datepick({
-	
-			// this removes the style attribute on 'onShow' event; maybe there's a better way, but this is very fast
-			
-			onShow: function() { 
-	
-	        	$('.datepick').removeAttr('style'); 
-	
-	        	}
-	
-		});
-
-$('#monthsQuarterPicker').datepick({ 
-    monthsToShow: 3, monthsToStep: 3, monthsOffset: function(date) { 
-        return date.getMonth() % 3; 
-    }, showTrigger: '#calImg'});
+		$('#monthsQuarterPicker').datepick({ 
+		    monthsToShow: 3, monthsToStep: 3, monthsOffset: function(date) { 
+		        return date.getMonth() % 3; 
+		    }, showTrigger: '#calImg'});
 	
 		// end doc.ready			
 	});
