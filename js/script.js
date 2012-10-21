@@ -73,14 +73,14 @@
 						
 						width: calendar.width(),
 						height: calendar.height(),
-						font: parseInt($('#inline_datepicker').find('.datepick').css('font-size'))
+						font: parseInt($('#inline_datepicker').css('font-size'))
 						
 					}
 					
 				},
 				stop: function(event, ui) {
 					
-					$('#inline_datepicker').find('.datepick').css({'font-size': containerSize.font});
+					$('#inline_datepicker').css({'font-size': containerSize.font});
 					$(this).animate({
 						
 						width: containerSize.width,
