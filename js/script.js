@@ -14,7 +14,7 @@
 	
 		var fontRatio = 0.050;	// sure you can change the fontRatio to fit your needs, fontRatio modifies the calendar height, 0.032 works fine for me, try 0.050
 		
-		$('.myDatepick').each(function() {
+		$('#inline_datepicker').each(function() {
 			var datepicker = $(this).find('.datepick'),
 			datepickerWidth = datepicker.width(),
 			newFontSize = parseInt(datepickerWidth * fontRatio);
