@@ -413,7 +413,7 @@ span#logo {
 	height: 50px;
 	display: inline-block;
 	float: right;
-	background: url(/img/gb_logo.png) no-repeat 0 -4px;
+	background: url(../img/gb_logo.png) no-repeat 0 -4px;
 }
       
 
