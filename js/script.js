@@ -10,9 +10,10 @@
 
 	function datePickerTextSize() {
 	
-		// this is used to set datepicker font size, the fontRation is based on datepicker width.
+		// this is used to set datepicker font size, fontRatio is based on datepicker width.
 	
-		var fontRatio = 0.050;	// sure you can change the fontRatio to fit your needs, fontRatio modifies the calendar height, 0.032 works fine for me, try 0.050
+		var fontRatio = 0.050;	// sure you can change the fontRatio to fit your needs, 
+								// fontRatio modifies the calendar height, 0.050 works fine for me, want bigger text? try 0.60
 		
 		$('#inline_datepicker').each(function() {
 			var datepicker = $(this).find('.datepick'),

@@ -517,6 +517,11 @@ div.datepick.datepick-multi {
 	width: 100px;
 }
 
+p.disclaimer {
+	font-size: 0.8em;
+	padding: 3em;
+}
+
 /* @group hands */
 
 #usage, #features {
@@ -546,6 +551,10 @@ div.datepick.datepick-multi {
 }
 
 #usage li:nth-child(4) {
+	background-position: 0 -223px;
+}
+
+#usage li:nth-child(5) {
 	background-position: 0 -156px;
 }
 
