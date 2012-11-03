@@ -1,10 +1,5 @@
-/* @override 
-	file:///Volumes/Macintosh%20HD/Users/daniele/Sites/sandbox/Yummi-cal/site/css/style.css
-	http://yummical.com/style.css
-*/
 
 /* @group 1140 */figure{position:relative}figure img{width:100%}
-
 
 /* ==================================================================================================================== */
 /* ! The 1140px Grid V2 by Andy Taylor \ http://cssgrid.net \ http://www.twitter.com/andytlr \ http://www.andytlr.com   */
@@ -115,7 +110,7 @@ h1 {
 	margin-bottom: 2em;
 	padding-bottom: 2em;
 }
-      
+
 
 @media only screen and (max-width: 1023px) {
 
@@ -123,7 +118,7 @@ h1 {
 	font-size: 0.8em;
 	line-height: 1.5em;
 	}
-	
+
 	}
 
 @media handheld, only screen and (max-width: 767px) {
@@ -132,7 +127,7 @@ h1 {
 	font-size: 16px;
 	-webkit-text-size-adjust: none;
 	}
-	
+
 	.row, body, .container {
 	width: 100%;
 	min-width: 0;
@@ -141,7 +136,7 @@ h1 {
 	padding-left: 0px;
 	padding-right: 0px;
 	}
-	
+
 	.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol, .row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvecol {
 	width: auto;
 	float: none;
@@ -156,7 +151,7 @@ h1 {
 @media handheld, only screen and (max-width: 767px) {
 
 	body {
-		
+
 	}
 
 }
