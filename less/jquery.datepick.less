@@ -92,6 +92,14 @@
 
 }
 
+// ugly chrome subpixel bug (or feature?) 
+
+.datepick, .datepick-nav, .datepick-month-row {
+	
+	display: table;
+	
+}
+
 // DATEPICK NAV [datepick-nav, datepick-cmd]
 
 a.datepick-cmd {
@@ -126,10 +134,9 @@ a.datepick-cmd {
 
 	text-decoration: none;
 	display: block;
-
 	&, &.datepick-disabled {
 	color: @datepickBackgroundColor;
-	cursor: auto;
+	cursor: pointer;
 	}
 }
 
@@ -150,7 +157,7 @@ a.datepick-cmd {
 	font-weight: bold;
 	text-transform: uppercase;
 	width: 100%;
-	height: 10%;
+	// height: 10%; disabled because of chrome bug
 	overflow: hidden;
 	.rounded-corners;
 }
@@ -259,8 +266,8 @@ button.datepick-cmd {
 	thead {
 		
 	border-bottom: 1px solid @datepickLineColor;
-	border-right: 1px solid @datepickLineColor;
 	border-left: 1px solid @datepickLineColor;		
+	border-right: 1px solid @datepickLineColor;
 		
 	}
 	
@@ -374,7 +381,7 @@ button.datepick-cmd {
 	
 	select, input {
 		
-		height: 2.4em;
+		// height: 2.4em;
 		border: none;
 		
 	}
