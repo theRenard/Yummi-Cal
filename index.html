@@ -39,10 +39,10 @@
 <div role="main">
 
 <a href="https://github.com/Gummibearlab/Yummi-cal"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
-	
+
 	<div class="container">
-	
-		
+
+
 		<div class="row">
 			<div id="col_0" class="onecol"></div>
 			<div id="col_1" class="fourcol">
@@ -53,21 +53,21 @@
 				<h1 id="title">Yummical</h1>
 				<h4 id="payoff">datepick responsive theme</h4>
 				<hr>
-				<p>Welcome to Yummical <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a> theme.</p>
-				<p>Datepick&trade; is, hands down, one of the best datepicker for jQuery out there. <br>But being honest, his themes are a bit, herr… outdated… So well, here's a new one.
-				<p>What will you find?</p>
+				<p>Welcome to the new Yummical theme form <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a>.</p>
+				<p>Datepick&trade; is, is surely one of the best datepicker for jQuery but its themes are a bit, err… outdated… So here's a new one!. <br>
+				<p>What's new?</p>
 				<ul id="features">
-					<li>A <strike>well</strike> commented LESS file, ready to be styled.</li>
-					<li>A javascript snippet to adjust font size on window resize events</li>
-					<li>An example page</li>
+					<li>A <strike>well</strike> LESS commented file, ready to be styled.</li>
+					<li>A javascript snippet for font size adjusting on resize events.</li>
+					<li>A sample page</li>
 					<li>Nothing else</li>
 				</ul>
 				<p>What sould you do?<p>
-				<ol id="usage"> 
-					<li>Download datepick package from the developer website -> <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a></li>
+				<ol id="usage">
+					<li>Download datepick package from its website -> <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a></li>
 					<li>Find "jquery.datepick.css" file and replace it with this one.</li>
-					<li>Add this snippet to your code and call it when you load the page <u>and</u> when you resize the window.
-						<pre><code class="language-javascript">						
+					<li>Add this snippet to your code and call it on page loading/window resizing events.
+						<pre><code class="language-javascript">
 function datePickerTextSize() {
 
 	var fontRatio = 0.050;
@@ -76,34 +76,34 @@ function datePickerTextSize() {
 		var datepicker = $(this).find('.datepick'),
 		datepickerWidth = datepicker.width(),
 		newFontSize = parseInt(datepickerWidth * fontRatio);
-	
+
 		$(this).css({'font-size' : newFontSize});
-	
+
 	});
 }
 						</code></pre>
-						
+
 					</li>					<li>Add these lines when you call for .datepick();
-						<pre><code class="language-javascript">						
+						<pre><code class="language-javascript">
 $('#your_pickers_here').datepick({
 
-  onShow: function() { 
-    $('.datepick').removeAttr('style'); 
-  } 
+  onShow: function() {
+    $('.datepick').removeAttr('style');
+  }
 
 });
 						</code></pre>
-						
+
 					</li>
 					<li>You are done.</li>
 				</ol>
 				<p class="info"><span id="logo" class="ir">logo</span>Happily done <a href="https://twitter.com/gummibear_lab" target="_blank" title="twitter"><br>@gummibearl_lab</a></p>
-				<p class="disclaimer">Please, keep in mind that this is v1.0, many things should not work as expected, one for all, this is just for inline datepicker, pop-up datepicker should came later. Change theme colours is straightforward, just read comments into .less file. If you need a LESS offline compiler, give a try @<a href="http://crunchapp.net" target="_blank">Crunch</a>.</p>				
+				<p class="disclaimer">Please, keep in mind that this is v1.0, many things should not work as expected, one for all, this is just for inline datepicker, pop-up datepicker should came later. Change theme colours is straightforward, just read comments into .less file. If you need a LESS offline compiler, give a try @<a href="http://crunchapp.net" target="_blank">Crunch</a>.</p>
 			</div>
 			<div id="col_4" class="onecol last"></div>
 		</div>
 	</div>
-	
+
 </div>
 
 
