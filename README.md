@@ -32,7 +32,7 @@ There are 2 Javascript snippets in this theme:
 
 	this function is very easy to implement, you should call it everytime you need to set the font size, like on $(document).ready(); and/or on $(window).resize();
 
-	If you need to set it on every window resize, then you this event https://github.com/louisremi/jquery-smartresize.
+	If you need to set it on every window resize, maybe you can use this event https://github.com/louisremi/jquery-smartresize.
 
 	function datePickerTextSize() {
 
