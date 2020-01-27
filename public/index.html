@@ -1,0 +1,137 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/jquery-ui-1.8.23.custom.css">
+	<link rel="stylesheet/less" type="text/css" href="less/jquery.datepick.less">
+
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- google webfont -->
+	<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+<body>
+
+	<div id="absolute_container">
+		<div id="resizable_calendar">
+			<div id="inline_datepicker"></div>
+		</div>
+	</div>
+
+
+<header>
+
+</header>
+<div role="main">
+
+<a href="https://github.com/Gummibearlab/Yummi-cal"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
+	<div class="container">
+
+
+		<div class="row">
+			<div id="col_0" class="onecol"></div>
+			<div id="col_1" class="fourcol">
+				<div id="datepicker_position"></div>
+				<div id="grabme">Try me<div id="hand"></div></div>
+			</div>
+			<div id="col_3" class="sixcol">
+				<h1 id="title">Yummical</h1>
+				<h4 id="payoff">datepick responsive theme</h4>
+				<hr>
+				<p>Welcome to the new Yummical theme form <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a>.</p>
+				<p>Datepick&trade; is, is surely one of the best datepicker for jQuery but its themes are a bit, err… outdated… So here's a new one! <br>
+				<p>What's new?</p>
+				<ul id="features">
+					<li>A <strike>well</strike> LESS commented file, ready to be styled.</li>
+					<li>A javascript snippet for font size adjusting on resize events.</li>
+					<li>A sample page</li>
+					<li>Nothing else</li>
+				</ul>
+				<p>What sould you do?<p>
+				<ol id="usage">
+					<li>Download datepick package from its website -> <a href="http://keith-wood.name/datepick.html" target="_blank" title="">datepick</a></li>
+					<li>Find "jquery.datepick.css" file and replace it with this one.</li>
+					<li>Add this snippet to your code and call it on page loading/window resizing events.
+						<pre><code class="language-javascript">
+function datePickerTextSize() {
+
+	var fontRatio = 0.050;
+
+	$('#your_pickers_here').each(function() {
+		var datepicker = $(this).find('.datepick'),
+		datepickerWidth = datepicker.width(),
+		newFontSize = parseInt(datepickerWidth * fontRatio);
+
+		$(this).css({'font-size' : newFontSize});
+
+	});
+}
+						</code></pre>
+
+					</li>					<li>Add these lines when you call for .datepick();
+						<pre><code class="language-javascript">
+$('#your_pickers_here').datepick({
+
+  onShow: function() {
+    $('.datepick').removeAttr('style');
+  }
+
+});
+						</code></pre>
+
+					</li>
+					<li>You are done.</li>
+				</ol>
+				<p class="info"><span id="logo" class="ir">logo</span>Happily done <a href="https://twitter.com/gummibear_lab" target="_blank" title="twitter"><br>@gummibear_lab</a></p>
+				<p class="disclaimer">Please, keep in mind that this is v1.0, many things should not work as expected, one for all, this is just for inline datepicker, pop-up datepicker should came later. Change theme colours is straightforward, just read comments into .less file. If you need a LESS offline compiler, give a try @<a href="http://crunchapp.net" target="_blank">Crunch</a>.</p>
+			</div>
+			<div id="col_4" class="onecol last"></div>
+		</div>
+	</div>
+
+</div>
+
+
+<footer>
+
+</footer>
+
+<script src="js/less-1.3.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+<script src="js/jquery-ui-1.8.23.custom.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/jquery.datepick.js"></script>
+<script src="js/script.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36759044-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

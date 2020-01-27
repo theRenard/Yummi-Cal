@@ -1,0 +1,456 @@
+/////////////////////////////////*************/////////////////////////////////
+//	                                 _ _                     _       _     	 //
+//	                                (_| |                   | |     | |    	 //
+//	  __ _ _   _ _ __ ___  _ __ ___  _| |__   ___  __ _ _ __| | __ _| |__  	 //
+//	 / _` | | | | '_ ` _ \| '_ ` _ \| | '_ \ / _ \/ _` | '__| |/ _` | '_ \ 	 //
+//	| (_| | |_| | | | | | | | | | | | | |_) |  __| (_| | |  | | (_| | |_) |	 //
+//	 \__, |\__,_|_| |_| |_|_| |_| |_|_|_.__/ \___|\__,_|_|  |_|\__,_|_.__/ 	 //
+//	  __/ |                                                                	 //
+//	 |___/  																 //
+//																			 //
+/////////////////////// yummical datepick™ theme v.1.0 ////////////////////////
+
+@datepickWidth: 100%;
+@datepickHeight: 100%;
+
+//**********************************//
+// here some "general" styles prefs //
+//**********************************//
+
+// here you can set background color, font color and some other stuff
+
+@datepickBackgroundColor: #fff;
+@datepickColor: #000;
+
+// these are the gradients you see on the top-natigation and in the cell when selected
+// you can choose a start color and an end color.
+
+@datepickGradienStartColor: rgb(90, 113, 136);
+@datepickGradienEndColor: rgb(120, 150, 178);
+
+// some other small details
+
+@datepickMonthColor: @datepickGradienStartColor;
+@datepickBackgroundColorDarker: darken(@datepickBackgroundColor, 10%);
+@datepickLineColor: darken(@datepickBackgroundColor, 15%);
+
+// font styling
+
+.font(@weight: 300, @size: 65%, @height: 2em) {
+	font: @weight @size e('/') @height "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+// rounded corners (still working on it, maybe v1.1), box-shadows and gradients
+
+.gradient (@startColor: @datepickGradienStartColor, @endColor: @datepickGradienEndColor) {
+	background-color: @startColor;
+	background-image: -webkit-gradient(radial, 50% 100%,100,50% -50%,100, from(@startColor), to(@endColor));
+	background-image: -webkit-radial-gradient(50% 0%, @endColor, @startColor);
+	background-image: -moz-radial-gradient(50% 0%, @endColor, @startColor);
+	background-image: -o-radial-gradient(50% 0%, @endColor, @startColor);
+	background-image: -ms-radial-gradient(50% 0%, @endColor, @startColor);
+	background-image: radial-gradient(50% 0%, @endColor, @startColor);
+	
+}
+
+.gradient-hover (@startColor: @datepickGradienStartColor, @endColor: @datepickGradienEndColor) {
+	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+	background-image: -moz-linear-gradient(top, @startColor, @endColor);
+	background-image: -o-linear-gradient(top, @startColor, @endColor);
+	background-image: -ms-linear-gradient(top, @startColor, @endColor);
+	background-image: linear-gradient(top, @startColor, @endColor);
+	
+}
+
+.rounded-corners (@radius: 0) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.drop-shadow (@x-axis: 0, @y-axis: 1px, @blur: 5px, @alpha: 0.3) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+//************************************************//
+// DON'T MESS WITH US (unless you really want to) //
+//************************************************//
+
+.datepick {
+
+	width: @datepickWidth;
+	height: @datepickHeight;	
+	background-color: @datepickBackgroundColor;
+	color: @datepickColor;	
+	.rounded-corners;
+//	.drop-shadow;
+	.font;
+
+}
+
+// ugly chrome subpixel bug (or feature?) 
+
+.datepick, .datepick-nav, .datepick-month-row {
+	
+	display: table;
+	
+}
+
+// DATEPICK NAV [datepick-nav, datepick-cmd]
+
+a.datepick-cmd {
+	height: 70%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.datepick-rtl {
+
+	direction: rtl;
+
+}
+
+.datepick-popup {
+
+	z-index: 1000;
+
+}
+
+.datepick-disable {
+
+	position: absolute;
+	z-index: 100;
+	background-color: @datepickBackgroundColor;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+
+}
+
+.datepick a {
+
+	text-decoration: none;
+	display: block;
+	&, &.datepick-disabled {
+	color: @datepickBackgroundColor;
+	cursor: pointer;
+	}
+}
+
+.datepick button {
+
+    margin: 0.25em;
+    padding: 0.125em 0em;
+    background-color: @datepickBackgroundColorDarker;
+    border: none;
+    font-weight: bold;
+    .rounded-corners;
+}
+
+.datepick-nav, .datepick-ctrl {
+
+	float: left;
+	color: @datepickColor;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+	// height: 10%; disabled because of chrome bug
+	overflow: hidden;
+	.rounded-corners;
+}
+
+.datepick-nav, .datepick-ctrl {
+	
+	.gradient;
+	
+}
+
+.datepick-cmd {
+	width: 31%;
+	text-shadow: gray 0 -1px 1px;
+}
+
+.datepick-cmd:hover {
+
+	.gradient-hover;
+
+}
+
+.datepick-ctrl .datepick-cmd:hover {
+	background-color: #f07f7f;
+}
+
+.datepick-cmd-prevJump, .datepick-cmd-nextJump {
+	width: 8%;
+}
+
+button.datepick-cmd {
+	text-align: center;
+}
+
+.datepick-cmd-prev, .datepick-cmd-prevJump, .datepick-cmd-clear {
+	float: left;
+	padding-left: 2%;
+	text-align: center;
+}
+
+.datepick-cmd-current, .datepick-cmd-today {
+	float: left;
+	width: 35%;
+	text-align: center;
+}
+
+.datepick-cmd-next, .datepick-cmd-nextJump, .datepick-cmd-close {
+	float: right;
+	text-align: center;
+}
+
+.datepick-rtl .datepick-cmd-current, .datepick-rtl .datepick-cmd-today {
+	float: right;
+}
+
+.datepick-rtl {
+	
+	.datepick-cmd-prev, .datepick-cmd-prevJump, .datepick-cmd-clear {
+		
+		float: right;
+		padding-left: 0%;
+		padding-right: 2%;		
+		
+	}
+	
+}
+
+.datepick-rtl {
+	
+	.datepick-cmd-next, .datepick-cmd-nextJump, .datepick-cmd-close {
+		
+		float: left;
+		padding-left: 2%;
+		padding-right: 0%;		
+		
+	}
+	
+}
+
+// here the datepick month, you know the row where you can select the month and the day… [datepick-month-row]
+
+// month row HEADER background and text color [datepick-month-header]
+
+@datepickMonthHeaderColor: @datepickBackgroundColor;
+@datepickMonthHeaderBackgroundColor: black;
+
+.datepick-month-style {
+	
+	background-color: @datepickMonthHeaderBackgroundColor;
+	color: @datepickMonthHeaderColor;
+	font-weight: bold;
+	
+}
+
+// datepick MONTH TABLE
+
+.datepick-month {
+	
+	table {
+		
+		width: 100%;
+		border-collapse: collapse;
+		height: 92%;		
+		
+	}
+	
+	thead {
+		
+	border-bottom: 1px solid @datepickLineColor;
+	border-left: 1px solid @datepickLineColor;		
+	border-right: 1px solid @datepickLineColor;
+		
+	}
+	
+	th, td {
+		
+		margin: 0;
+		padding: 0;
+		font-weight: normal;
+		text-align: center;				
+		
+	}
+	
+	th, th a {
+		
+		background-color: @datepickBackgroundColor;
+		color: @datepickColor;
+		font-weight: bold;
+		text-transform: uppercase;		
+		
+	}
+	
+	td.datepick-week {
+		
+		* {
+			
+			background-color: @datepickColor;
+			color: @datepickBackgroundColor;
+			border: none;			
+			
+		}
+		
+	}
+	
+	a, span {
+		display: block;
+		background-color: @datepickBackgroundColor;
+		color: @datepickColor;
+		text-decoration: none;
+		height: 100%;
+		margin: 0;
+		padding: 30% 0;
+	}
+	
+	&, td span {
+		
+		color: @datepickLineColor
+		
+	}
+	
+	td {
+
+		.datepick-other-month, .datepick-weekend { background-color: @datepickBackgroundColor;}
+		.datepick-today, .datepick-highlight {background-color: @datepickBackgroundColorDarker}
+		.datepick-selected {
+			background-color: @datepickGradienEndColor;
+			color: @datepickBackgroundColor;
+			text-shadow: gray 0 -1px 1px;
+			font-weight: bold;
+		}
+
+	}
+	
+	th.datepick-week {
+		background-color: #777;
+		color: #fff;
+	}	
+	
+}
+
+// month row HEADER 
+
+.datepick-month {
+
+	float: left;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	
+	span {
+		
+		color: @datepickMonthColor;
+		display: block;
+		padding-top: 10%;
+		padding-bottom: 10%;
+		
+	}
+	
+	td {
+		
+		background-color: @datepickBackgroundColor;
+		border: 1px solid @datepickLineColor;
+		width: 14.28%;
+
+	}
+	
+}
+
+.datepick-month-header {
+	
+	font-size: 1em;
+	
+	&, select, input {
+
+		background-color: @datepickMonthHeaderBackgroundColor;
+		color: @datepickMonthHeaderColor;
+		font-weight: bold;
+		padding: 2px 0 2px;
+
+
+	}
+	
+	select, input {
+		
+		// height: 2.4em;
+		border: none;
+		
+	}
+	
+	input {
+
+		position: absolute;
+		display: none;
+		
+	}
+
+}
+
+.datepick-month-nav {
+
+	float: left;
+	background-color: #777;
+	text-align: center;
+
+	div {
+		float: left;
+		width: 12.5%;
+		margin: 1%;
+		padding: 1%;
+	}
+
+	span {
+		color: #888;
+	}
+	
+}	
+
+.datepick-month-row {
+
+	height: 90%;
+	width: 100%;
+
+}
+
+// end of month styling
+
+
+.datepick-status {
+
+	clear: both;
+	background-color: #ddd;
+	text-align: center;
+
+}
+
+.datepick-clear-fix {
+	clear: both;
+}
+
+.datepick-cover {
+    display: none;
+    // display/**/: block;
+    position: absolute;
+    z-index: -1;
+    filter: mask();
+    top: -1px;
+    left: -1px;
+    width: 100px;
+    height: 100px;
+}
+
+#inlineDatepicker {
+	width: 90%;
+	background-color: aqua;
+	padding: 5%;
+	height: auto;
+}
